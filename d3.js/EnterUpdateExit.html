@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <title>D3 tutorial</title>
+ <script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+ 
+ <script>
+ 
+	//DOM elements<Data elements(enter)
+	//DOM elements>Data elements(exit)
+	//DOM elements=Data elements(update)
+	
+	var data=[10,20]; 
+	
+	var canvas=d3.select("body")
+	           .append("svg")
+			   .attr("width",500)
+			   .attr("height",500);
+			   
+	var circle= canvas.append("circle")
+				.attr("cx",400)
+				.attr("cy",100)
+				.attr("r",25);
+				
+	
+	var circles=canvas.selectAll("circle")
+				.data(data)
+				.attr("fill","green")
+				.enter()
+				.append("circle")
+				.attr("fill","red")
+				.attr("cx",100)
+				.attr("cy",50)
+				.attr("r",25);
+						
+	
+	 
+ </script>
+ 
+</body>
+</html>
